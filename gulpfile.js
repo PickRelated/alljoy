@@ -22,13 +22,13 @@ gulp.task('css', function() {
     .pipe(concat('style.css'))
     .pipe(clean())
     .pipe(rename({extname: '.min.css'}))
-    .pipe(gulp.dest('.'));
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('html', function() {
   return gulp.src('src/jade/*.jade')
     .pipe(jade())
-    .pipe(gulp.dest('.'))
+    .pipe(gulp.dest('dist'))
 })
 
 gulp.task('js', function() {
@@ -37,7 +37,7 @@ gulp.task('js', function() {
     .pipe(concatjs('script.js'))
     .pipe(uglify())
     .pipe(rename({extname: '.min.js'}))
-    .pipe(gulp.dest('.'))
+    .pipe(gulp.dest('dist'))
 })
 
 gulp.task('watch:css', function () {
